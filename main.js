@@ -143,9 +143,9 @@ const comprarProductos = (listaOrdenada) => {
         let cuotas = totalCantidad/3
         let sindescuento = true
         do {
-            formaPago = prompt('Ingrese si abono en Efectivo (20% descuento) o Tarjeta (tiene 3 cuotas sin interes)').toLowerCase()
+            formaPago = prompt('Ingrese si abono en Efectivo (20% descuento) o Tarjeta (tiene 3 cuotas sin interes)')
             
-            switch (formaPago) {
+            switch (formaPago.toLowerCase()) {
                 case 'efectivo':
                     descuentos = 20
                     break;
