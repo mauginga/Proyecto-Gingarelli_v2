@@ -143,13 +143,13 @@ const comprarProductos = (listaOrdenada) => {
         let cuotas = totalCantidad/3
         let sindescuento = true
         do {
-            formaPago = prompt('Ingrese si abono en Efectivo (20% descuento) o Tarjeta (tiene 3 cuotas sin interes)')
+            formaPago = prompt('Ingrese si abono en Efectivo (20% descuento) o Tarjeta (tiene 3 cuotas sin interes)').toLowerCase()
             
             switch (formaPago) {
-                case 'Efectivo':
+                case 'efectivo':
                     descuentos = 20
                     break;
-                case 'Tarjeta':
+                case 'tarjeta':
                     descuentos = 0
                     alert('Sus cuotas son de '+ cuotas)
                     break
@@ -160,7 +160,7 @@ const comprarProductos = (listaOrdenada) => {
             }
     
             subdesc = (descuentos * totalCantidad)/100
-            sindescuento = confirm('Su descuento es de $' + subdesc + ' .Eligio la forma de pago ' + formaPago + ' ¿es correcto?')
+            sindescuento = confirm('Su descuento es de $' + subdesc + ' .Eligio la forma de pago ' + formaPago.toUpperCase() + ' ¿es correcto?')
         } while(formaPago = '')
         return descuentos
     };
